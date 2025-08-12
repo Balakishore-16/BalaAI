@@ -1,0 +1,47 @@
+{
+  "name": "cbit-career-agent",
+  "version": "1.0.0",
+  "description": "CBIT Personal AI Career Agent - AI-powered career assistance for CBIT students",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend",
+    "worker",
+    "shared"
+  ],
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:worker\"",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:worker": "cd worker && npm run dev",
+    "build": "npm run build:frontend && npm run build:backend && npm run build:worker",
+    "build:frontend": "cd frontend && npm run build",
+    "build:backend": "cd backend && npm run build",
+    "build:worker": "cd worker && npm run build",
+    "start": "concurrently \"npm run start:backend\" \"npm run start:frontend\" \"npm run start:worker\"",
+    "start:frontend": "cd frontend && npm run start",
+    "start:backend": "cd backend && npm run start",
+    "start:worker": "cd worker && npm run start",
+    "install:all": "npm install && cd frontend && npm install && cd ../backend && npm install && cd ../worker && npm install && cd ../shared && npm install",
+    "lint": "npm run lint:frontend && npm run lint:backend && npm run lint:worker",
+    "lint:frontend": "cd frontend && npm run lint",
+    "lint:backend": "cd backend && npm run lint",
+    "lint:worker": "cd worker && npm run lint"
+  },
+  "devDependencies": {
+    "concurrently": "^8.2.2"
+  },
+  "keywords": [
+    "career",
+    "ai",
+    "job-hunting",
+    "internships",
+    "hackathons",
+    "cbit",
+    "nextjs",
+    "nodejs",
+    "mongodb"
+  ],
+  "author": "CBIT Career Agent Team",
+  "license": "MIT"
+}
